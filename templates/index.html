@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar QR Wi-Fi</title>
+</head>
+<body>
+    <h1>Generar QR para red Wi-Fi</h1>
+    <form method="post">
+        <label for="ssid">Nombre de la red (SSID):</label>
+        <input type="text" id="ssid" name="ssid" required><br><br>
+        <label for="security_type">Tipo de seguridad:</label>
+        <input type="text" id="security_type" name="security_type" required><br><br>
+        <button type="submit">Generar QR</button>
+    </form>
+    {% if img_str %}
+    <h2>Escanea el código QR para conectarte a la red Wi-Fi:</h2>
+    <img src="data:image/png;base64,{{ img_str }}" alt="QR Code">
+    {% endif %}
+</body>
+</html>
